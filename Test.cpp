@@ -16,9 +16,9 @@ BinaryTree<int> intBad;
 TEST_CASE("initialization for intTree "){
 
 CHECK_NOTHROW(intTree.add_root(1));
-CHECK_NOTHROW(intTree.add_left(1, 2));    
-CHECK_NOTHROW(intTree.add_left(2, 3));     
-CHECK_NOTHROW(intTree.add_right(2, 4));     
+CHECK_NOTHROW(intTree.add_left(1, 2));
+CHECK_NOTHROW(intTree.add_left(2, 3));
+CHECK_NOTHROW(intTree.add_right(2, 4));
 CHECK_NOTHROW(intTree.add_right(1, 5));
 CHECK_NOTHROW(intTree.add_left(1, 6));
 
@@ -101,9 +101,9 @@ for (auto it=doubleTree.begin_postorder(); it!=doubleTree.end_postorder(); ++it)
 TEST_CASE("initialization for stringTree "){
 
 CHECK_NOTHROW(stringTree.add_root("hey"));
-CHECK_NOTHROW(stringTree.add_left("hey", "everyone"));    
-CHECK_NOTHROW(stringTree.add_left("everyone", "is"));     
-CHECK_NOTHROW(stringTree.add_right("everyone", "shay"));     
+CHECK_NOTHROW(stringTree.add_left("hey", "everyone"));
+CHECK_NOTHROW(stringTree.add_left("everyone", "is"));
+CHECK_NOTHROW(stringTree.add_right("everyone", "shay"));
 CHECK_NOTHROW(stringTree.add_right("hey", "name"));
 CHECK_NOTHROW(stringTree.add_left("hey", "my"));
 
@@ -118,7 +118,7 @@ CHECK_NOTHROW(stringTree.add_left("hey", "my"));
 string preorderArr[] = {"hey", "my", "is", "shay", "name"};
 
 int i = 0;
-for (auto it=stringTree.begin_preorder(); it!=stringTree.end_preorder(); ++it) {
+for (auto it= stringTree.begin_preorder(); it!=stringTree.end_preorder(); ++it) {
     CHECK((*it) == preorderArr[i]);
     i++;
     }
@@ -135,7 +135,7 @@ for (auto it=stringTree.begin_inorder(); it!=stringTree.end_inorder(); ++it) {
 string postorderArr[] = {"is", "shay", "my", "name", "hey"};
 
 i = 0;
-for (auto it=stringTree.begin_postorder(); it!=stringTree.end_postorder(); ++it) {
+for (auto it= stringTree.begin_postorder(); it!=stringTree.end_postorder(); ++it) {
     CHECK((*it) == postorderArr[i]);
         i++;
     }
@@ -162,11 +162,11 @@ TEST_CASE("Bad initialization") {
     CHECK_THROWS(intBad.add_left(6, 8)); // 6 is not the root
     CHECK_THROWS(intBad.add_right(3, 2)); // 3 is not in the tree
 
-    CHECK_NOTHROW(intBad.add_root(3)); 
+    CHECK_NOTHROW(intBad.add_root(3));
     CHECK_THROWS(intBad.add_left(1, 9)); // is not the root
     CHECK_THROWS(intBad.add_right(1, 7)); // same as above
 
-    CHECK_NOTHROW(intBad.add_right(3, 2)); 
+    CHECK_NOTHROW(intBad.add_right(3, 2));
     CHECK_THROWS(intBad.add_left(19, 42));//19 is not in the tree
     CHECK_NOTHROW(intBad.add_root(9));
     CHECK_NOTHROW(intBad.add_left(3, 6));
@@ -180,7 +180,7 @@ TEST_CASE("Bad initialization") {
     int postorderArr[] = {6, 5, 3};
 
     int i = 0;
-    bool c;
+    bool flag;
     for (auto it=intBad.begin_preorder(); it!=intBad.end_preorder(); ++it) {
         CHECK_FALSE((*it) == postorderArr[i]);
         i++;
@@ -192,7 +192,7 @@ TEST_CASE("Bad initialization") {
 }
 
 TEST_CASE("print intTree"){
-    CHECK_NOTHROW( cout << intTree << endl);
+    CHECK_NOTHROW(cout << intTree << endl);
 }
 
 TEST_CASE("print stringTree"){
@@ -204,7 +204,8 @@ TEST_CASE("print doubleTree"){
 }
 
 TEST_CASE("print intBad"){
-     CHECK_NOTHROW(cout << intBad << endl);
+    CHECK_NOTHROW(cout << intBad << endl);
 }
+
 
 
