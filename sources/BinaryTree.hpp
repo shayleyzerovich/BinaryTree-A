@@ -94,6 +94,6 @@ namespace ariel {
 		bool operator==(const BinaryTree& Tree) { return true; }
 		bool operator!=(const BinaryTree& Tree) { return false; }
 
-		friend std::ostream& operator<<(std::ostream& os, const BinaryTree& binaryTree);
+		friend std::ostream& operator<<(std::ostream& os, const BinaryTree& binaryTree) { return os; }
 	};
 }
