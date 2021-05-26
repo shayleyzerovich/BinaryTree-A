@@ -1,7 +1,6 @@
-
 #include <iostream>
 using namespace std;
-namespace ariel{
+using namespace ariel{
 	template<typename T>
 	class BinaryTree {
 
@@ -71,8 +70,9 @@ namespace ariel{
 		BinaryTree(BinaryTree* binarytree);
 		~BinaryTree() {}
 		BinaryTree& add_root(T value) { return *this; }
-		BinaryTree& add_left(T rootVal, T LeftVal) { return *this; }
-		BinaryTree& add_right(T rootVal, T RightVal) { return *this; }
+		BinaryTree& add_left(T rootVal, T LeftVal) {if(IsParent(rootVal)) return *this; throw "Parent is not exist";}
+		BinaryTree& add_right(T rootVal, T RightVal) { if (IsParent(rootVal)) return *this; throw "Parent is not exist";
+		}
 		InorderIterator begin() {
 			begin_inorder();
 			return root;
@@ -94,5 +94,8 @@ namespace ariel{
 		bool operator!=(const BinaryTree& Tree) { return false; }
 
 		friend std::ostream& operator<<(std::ostream& os, const BinaryTree& binaryTree) { return os; };
+		bool IsParent(T RootVal) {return true;}
+
 	};
 }
+
