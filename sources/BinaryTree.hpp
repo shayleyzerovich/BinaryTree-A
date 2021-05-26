@@ -1,7 +1,7 @@
 
 #include <iostream>
 using namespace std;
-
+namespace ariel{
 	template<typename T>
 	class BinaryTree {
 
@@ -95,3 +95,4 @@ using namespace std;
 
 		friend std::ostream& operator<<(std::ostream& os, const BinaryTree& binaryTree) { return os; };
 	};
+}
