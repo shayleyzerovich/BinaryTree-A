@@ -6,11 +6,12 @@
 #include "BinaryTree.hpp"
 
 using namespace std;
-
+using namespace ariel;
 BinaryTree<int>intTree;
 BinaryTree<double>doubleTree;
 BinaryTree<string> stringTree;
 BinaryTree<int> intBad;
+
 
 TEST_CASE("initialization for intTree "){
 
