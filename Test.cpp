@@ -49,7 +49,7 @@ for (auto it=intTree.begin_inorder(); it!=intTree.end_inorder(); ++it) {
 int postorderArr[] = {3,4,6,5,1};
 
 i = 0;
-for (auto it=stringTree.begin_postorder(); it!=stringTree.end_postorder(); ++it) {
+for (auto it=intTree.begin_postorder(); it!=intTree.end_postorder(); ++it) {
     CHECK((*it) == postorderArr[i]);
         i++;
     }
@@ -58,12 +58,12 @@ for (auto it=stringTree.begin_postorder(); it!=stringTree.end_postorder(); ++it)
 
 TEST_CASE("initialization for doubleTree "){
 
-CHECK_NOTHROW(intTree.add_root(1.5));
-CHECK_NOTHROW(intTree.add_left(1.5, 2.3));    
-CHECK_NOTHROW(intTree.add_left(2.3, 3.8));     
-CHECK_NOTHROW(intTree.add_right(2.3, 4.1));     
-CHECK_NOTHROW(intTree.add_right(1.5, 5.7));
-CHECK_NOTHROW(intTree.add_left(1.5, 6.3));
+CHECK_NOTHROW(doubleTree.add_root(1.5));
+CHECK_NOTHROW(doubleTree.add_left(1.5, 2.3));    
+CHECK_NOTHROW(doubleTree.add_left(2.3, 3.8));     
+CHECK_NOTHROW(doubleTree.add_right(2.3, 4.1));     
+CHECK_NOTHROW(doubleTree.add_right(1.5, 5.7));
+CHECK_NOTHROW(doubleTree.add_left(1.5, 6.3));
 
 /* should look like this:
     1.5
